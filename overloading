@@ -1,0 +1,50 @@
+# include < iostream >
+Using namespace std ;
+Class Library_memo
+{
+Int x , y ; // coordinate values
+Public :
+Library_memo () { x =0; y =0; };
+Library_memo( int I , int j ) { x = I ; y = j ; }
+Void get_xy ( int &I , int & j ) { I = x ; j = y ; }
+Library_memo operator +( Library_memo ob2 ) ;
+Library_memo operator *( Library_memo ob2 ) ;
+Library_memooperator =( Library_memo ob2 ) ;
+};
+Library_memo Library_memo :: operator +( Library_memo ob2 )
+{
+Library_memo temp ;
+Temp . x = x + ob2 . x ;
+Temp . y = y + ob2 . y ;
+Return temp ;
+}
+
+Library_memo Library_memo:: operator *( Library_memo ob2 )
+{
+Library_memo temp ;
+Temp . x = x * ob2 . x ;
+Temp . y = y * ob2 . y ;
+Return temp ;
+}
+
+Library_memo Library_memo:: operator =( Library_memo ob2 )
+{
+X = ob2 . x ;
+Y = ob2 . y ;
+Return * this ; 
+}
+Int main ()
+{
+Library_memo o1 (10 , 10) , o2 (5 , 3) , o3 ;
+Int x , y ;
+O3 = o1 + o2 ; 
+O3 . get_xy (x , y ) ;
+Cout << “ ( o1 + o2 ) X : “ << x << “ , Y : “ << y << “ \ n “ ;
+O3 = o1 * o2 ; 
+O3 . get_xy (x , y ) ;
+Cout << “ ( o1 * o2 ) X : “ << x << “ , Y : “ << y << “ \ n “ ;
+O3 = o1 ; 
+O3 . get_xy (x , y ) ;
+Cout << “ ( o3 = o1 ) X : “ << x << “ , Y : “ << y << “ \ n “ ;
+Return 0;
+}
